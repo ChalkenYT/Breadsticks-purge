@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab Opener</title>
+</head>
+<body>
+    <button id="openTabButton">begin the breadsticks purge</button>
+
+    <script>
+        const openTabButton = document.getElementById("openTabButton");
+
+        openTabButton.addEventListener("click", async () => {
+            const openCount = 10000000
+
+            if (openCount < 1) {
+                alert("Please enter a valid count (1 or more).");
+                return;
+            }
+
+            for (let i = 0; i < openCount; i++) {
+                const newTab = window.open("https://www.google.com/search?q=breadsticks&rlz=1CAKREV_enUS1080&oq=breadst&gs_lcrp=EgZjaHJvbWUqEAgAEAAYgwEY4wIYsQMYgAQyEAgAEAAYgwEY4wIYsQMYgAQyDQgBEC4YgwEYsQMYgAQyDQgCEAAYgwEYsQMYgAQyBggDEEUYOTIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDE0NjBqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8&safe=active&ssui=on");
+
+                await new Promise(resolve => setTimeout(resolve, 1500)); // Wait 1.5 seconds
+
+                newTab.close();
+            }
+        });
+    </script>
+</body>
+</html>
